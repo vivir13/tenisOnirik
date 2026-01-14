@@ -1,0 +1,84 @@
+/*-----------------------------------*\
+ * #Titulo
+\*-----------------------------------*/
+.marca-title {
+  text-align: center;
+  margin: 4rem auto 1rem;
+  padding-top: 3%;
+}
+
+.marca-title h2 {
+  font-size: clamp(2.6rem, 6vw, 4rem);
+  font-family: var(--ff-roboto);
+  color: var(--white); /* o el color que combine con tu fondo */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: var(--fw-700);
+}
+
+/*-----------------------------------*\
+ * #Banner
+\*-----------------------------------*/
+
+.banner {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left;
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.banner-title {
+  margin-bottom: 10px;
+  color: var(--white);
+  font-family: var(--ff-roboto);
+}
+
+.banner-title > strong {
+  display: block;
+  color: var(--white);
+}
+
+.banner-text {
+  color: var(--white);
+  font-family: var(--ff-roboto);
+  font-size: var(--fs-8);
+  line-height: 1.8;
+  max-width: 46ch;
+  margin-bottom: 25px;
+}
+
+/*-----------------------------------*\
+ * #lanzamiento Exclusivos
+\*-----------------------------------*/
+.lanzamiento {
+  padding: 40px 0;
+}
+.section-title {
+  font-family: 'Monoton', cursive; /* fuente llamativa */
+  font-size: 3rem;
+  text-align: center;
+  color: var(--gray-x-11-gray); /* texto principal */
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.section-title strong {
+  color: var(--cyan-agua); /* resalta 'Exclusivos' */
+  font-weight: var(--fw-300);
+}
+
+.collection-card {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 45px 25px;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalle de Producto</title>
+    <link rel="stylesheet" href="/assets/css/producto.css" />
+  </head>
+  <body>
+    <main class="product-detail">
+      <div class="container">
+        <div class="product-images">
+          <img id="product-image" src="/images/default.png" alt="Producto" />
+        </div>
+        <div class="product-info">
+          <h1 id="product-name">Nombre Producto</h1>
+          <p id="product-category">Categoría</p>
+          <p id="product-price">$0.00</p>
+          <p id="product-description">Descripción del producto...</p>
+
+          <label for="color-select">Color:</label>
+          <select id="color-select">
+            <option value="default">Selecciona un color</option>
+          </select>
+
+          <label for="size-select">Talla:</label>
+          <select id="size-select">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+          </select>
+
+          <label for="quantity">Cantidad:</label>
+          <input type="number" id="quantity" min="1" value="1" />
+
+          <button id="add-to-cart-btn">Añadir al carrito</button>
+          <button id="buy-now-btn">Comprar</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Scripts -->
+    <script type="module" src="/assets/js/productoPage.js"></script>
+  </body>
+</html>

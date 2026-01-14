@@ -1,0 +1,48 @@
+/*-----------------------------------*\
+ * #GO TOP
+\*-----------------------------------*/
+
+.go-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  background: var(--cyan-agua);
+  color: var(--white);
+  border: 4px;
+  border-radius: 50%;
+  font-size: 20px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px var(--white);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-1);
+  z-index: 1000;
+}
+
+.go-top-btn.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.go-top-btn:is(:hover, :focus) {
+  background: var(--salmon);
+  transform: scale(1.1);
+}
+/* Animación personalizada */
+@keyframes slideUpFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

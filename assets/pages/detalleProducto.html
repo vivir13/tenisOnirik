@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalle de producto</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <div id="product-detail"></div>
+
+    <script>
+      async function loadProductDetail() {
+        const params = new URLSearchParams(location.search)
+        const id = params.get('id')
+
+        const res = await fetch(`/api/products/${id}`)
+        const product = await res.json()
+
+        const container = document.getElementById('product-detail')
+        container.innerHTML = `
+        <div class="product-detail">
+          <img src="${product.image}" alt="${product.name}" width="300">
+          <h1>${product.name}</h1>
+          <p>${product.description}</p>
+          <p><strong>Precio:</strong> $${product.price}</p>
+
+          <label>Talla: 
+            <select id="size-select">
+              ${product.sizes
+                .map((size) => `<option value="${size}">${size}</option>`)
+                .join('')}
+            </select>
+          </label>
+
+          <label>Color: 
+            <select id="color-select">
+              ${product.colors
+                .map((color) => `<option value="${color}">${color}</option>`)
+                .join('')}
+            </select>
+          </label>
+
+          <button id="add-to-cart-btn">Añadir al carrito</button>
+        </div>
+      `
+
+        // Botón "Añadir al carrito"
+        document
+          .getElementById('add-to-cart-btn')
+          .addEventListener('click', () => {
+            addToCart(product)
+          })
+      }
+
+      function addToCart(product) {
+        const size = document.getElementById('size-select').value
+        const color = document.getElementById('color-select').value
+
+        // Recuperar carrito del localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || []
+
+        // Ver si ya existe un producto con mismo id, talla y color
+        const existing = cart.find(
+          (item) =>
+            item.id === product.id && item.size === size && item.color === color
+        )
+
+        if (existing) {
+          existing.quantity += 1
+        } else {
+          cart.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            image: product.image,
+            size,
+            color,
+            quantity: 1,
+          })
+        }
+
+        // Guardar carrito en localStorage
+        localStorage.setItem('cart', JSON.stringify(cart))
+
+        alert(`"${product.name}" añadido al carrito ✅`)
+      }
+
+      loadProductDetail()
+    </script>
+  </body>
+</html>

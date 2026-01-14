@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Metadatos mejorados -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Tenis Supra - Calzado deportivo de alta calidad con diseño innovador"
+    />
+
+    <title>producto</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/component/productos.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header" data-header>
+      <div class="container">
+        <div class="overlay" data-overlay></div>
+
+        <a href="#" class="logo">
+          <img
+            src="/images/onitik-verdeaguamarina.png"
+            width="150"
+            alt="Onirik logo"
+          />
+        </a>
+
+        <button class="nav-open-btn" data-nav-open-btn aria-label="Abrir menú">
+          <ion-icon name="menu-outline"></ion-icon>
+        </button>
+
+        <nav class="navbar" data-navbar>
+          <button
+            class="nav-close-btn"
+            data-nav-close-btn
+            aria-label="Cerrar menú"
+          >
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+
+          <a href="#" class="logo">
+            <img
+              src="/images/onitik-verdeaguamarina.png"
+              width="100"
+              alt="Onirik logo"
+            />
+          </a>
+
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <a href="" class="navbar-link">Inicio</a>
+            </li>
+            <li class="navbar-item">
+              <a href="/assets/pages/caballero/index.html" class="navbar-link"
+                >Caballero</a
+              >
+            </li>
+            <li class="navbar-item">
+              <a href="/assets/pages/Dama/index.html" class="navbar-link"
+                >Dama</a
+              >
+            </li>
+            <li class="navbar-item">
+              <a href="/assets/pages/Kids/index.html" class="navbar-link"
+                >Kids</a
+              >
+            </li>
+          </ul>
+
+          <ul class="nav-action-list">
+            <li>
+              <button class="nav-action-btn" aria-label="Buscar" title="Buscar">
+                <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+                <span class="nav-action-text">Buscar</span>
+              </button>
+            </li>
+            <li>
+              <a
+                href="#"
+                id="open-login"
+                class="nav-action-btn"
+                aria-label="Login o registro"
+                title="Registro"
+              >
+                <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+                <span class="nav-action-text">Login / Registro</span>
+              </a>
+            </li>
+
+            <li>
+              <button
+                id="open-wishlist"
+                class="nav-action-btn"
+                aria-label="Abrir Wishlist"
+                title="Lista de deseos"
+              >
+                <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                <span class="nav-action-text">Lista de deseos</span>
+                <data
+                  id="wishlist-count"
+                  class="nav-action-badge"
+                  value=""
+                  aria-hidden="true"
+                  >5</data
+                >
+              </button>
+            </li>
+            <li>
+              <button
+                class="nav-action-btn"
+                aria-label="Carrito de compras"
+                title="Carrito"
+              >
+                <ion-icon name="bag-outline" aria-hidden="true"></ion-icon>
+                <data class="nav-action-text" value="318.00">
+                  Carrito: <strong>$318.00</strong>
+                </data>
+                <data class="nav-action-badge" value="0" aria-hidden="true"
+                  >0</data
+                >
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="product-page">
+      <!-- Galería de imágenes -->
+      <div class="product-gallery">
+        <div class="main-image">
+          <img src="" alt="Producto seleccionado" class="product-image" />
+        </div>
+        <div class="thumbnail-container">
+          <div class="thumbnail active">
+            <img
+              src="/images/diseñotenis/caballero/Factor-navy.png"
+              alt="Vista frontal"
+            />
+          </div>
+          <div class="thumbnail">
+            <img
+              src="/images/diseñotenis/caballero/Factor-navy-topaz.png"
+              alt="Vista lateral"
+            />
+          </div>
+          <div class="thumbnail">
+            <img
+              src="/images/diseñotenis/caballero/instagate.png"
+              alt="Vista trasera"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Información del producto -->
+      <div class="product-info">
+        <div class="product-header">
+          <h1 class="product-title">Tenis Supra</h1>
+          <div class="product-price">
+            <span class="current-price">$1,000</span>
+            <span class="original-price">$1,200</span>
+            <span class="discount-badge">16% OFF</span>
+          </div>
+          <div class="product-rating">
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i> <i class="fas fa-star"></i
+              ><i class="fas fa-star-half-alt"></i>
+            </div>
+            <span class="review-count">(24 reseñas)</span>
+          </div>
+        </div>
+
+        <!-- Descripción -->
+        <div class="product-accordion">
+          <div class="accordion-item active">
+            <span>Descripción</span>
+            <div class="accordion-content">
+              <p>
+                Zapatillas deportivas Supra con tecnología de amortiguación
+                avanzada para mayor comodidad durante todo el día. Diseño
+                moderno que combina estilo y funcionalidad.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Opciones de producto -->
+        <div class="product-options">
+          <div class="option-group">
+            <label>Color</label>
+            <div class="color-selector">
+              <button
+                class="color-circle"
+                style="background-color: #ffffff"
+                aria-label="Blanco"
+              ></button>
+              <button
+                class="color-circle"
+                style="background-color: #000000"
+                aria-label="Negro"
+              ></button>
+              <button
+                class="color-circle"
+                style="background-color: #ff0000"
+                aria-label="Rojo"
+              ></button>
+              <button
+                class="color-circle"
+                style="background-color: #0000ff"
+                aria-label="Azul"
+              ></button>
+            </div>
+          </div>
+
+          <div class="option-group">
+            <label>Talla</label>
+            <div class="size-selector">
+              <button class="size-option">35</button>
+              <button class="size-option">36</button>
+              <button class="size-option active">37</button>
+              <button class="size-option">38</button>
+              <button class="size-option">39</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cantidad y botones -->
+        <div class="quantity-container">
+          <label for="quantity-input">Cantidad</label>
+          <div class="quantity-selector">
+            <button type="button" class="quantity-btn minus">-</button>
+            <input
+              id="quantity-input"
+              type="number"
+              value="1"
+              min="1"
+              class="quantity-input"
+            />
+            <button type="button" class="quantity-btn plus">+</button>
+            <span class="stock-status"> +15 disponibles</span>
+          </div>
+        </div>
+
+        <div>
+          <button type="button" class="btn-add-to-cart">
+            <i class="fas fa-shopping-cart"></i> Añadir al carrito
+          </button>
+
+          <button type="button" class="btn-buy-now">
+            <i class="fas fa-bolt"></i> Comprar ahora
+          </button>
+        </div>
+
+        <!-- Especificaciones -->
+        <div class="product-specs">
+          <p><strong>Marca:</strong> SUPRA</p>
+          <p><strong>SKU:</strong> SUP-SKY-001</p>
+          <p><strong>Categoría:</strong> Skate Shoes</p>
+          <p><strong>Material:</strong> Cuero y Gamuza</p>
+        </div>
+
+        <!-- Envío -->
+        <div class="shipping-info-box">
+          <h4>Información de Envío</h4>
+          <ul>
+            <li>🚚 Envío gratis en pedidos superiores a $100</li>
+            <li>⏱️ Entrega en 2-5 días hábiles</li>
+            <li>🔁 Devoluciones gratuitas en 30 días</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <!-- Productos relacionados -->
+    <section class="related-products">
+      <h2>Productos relacionados</h2>
+      <div class="product-grid">
+        <!-- Aquí irían los productos relacionados -->
+      </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="/assets/js/app.js" type="module" defer></script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

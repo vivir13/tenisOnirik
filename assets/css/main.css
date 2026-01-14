@@ -1,0 +1,27 @@
+/* Importaciones */
+/*base*/
+
+@import url('base/_variables.css');
+@import url('base/_reset.css');
+@import url('./base/classesutilitarias.css');
+
+/*components*/
+@import url('./component/header.css');
+@import url('./component/badges.css');
+@import url('./component/buttons.css');
+@import url('./component/carrito.css');
+@import url('./component/deta-produc.css');
+@import url('./component/modal.css');
+@import url('./component/productos.css');
+@import url('./component/servicio.css');
+
+/*layout*/
+@import url('./layaout/estructutageneral..css');
+@import url('./layaout/footer.css');
+@import url('./layaout/grid.css');
+@import url('./layaout/go-top.css');
+
+/*sections*/
+@import url('./sections/kids.css');
+
+@import url('./responsive/desktop.css');

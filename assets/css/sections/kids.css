@@ -1,0 +1,49 @@
+/*kids seccion */
+.kids-section {
+  padding: var(--section-padding) 1rem;
+  text-align: center;
+}
+
+.kids-section .container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.kids-section .section-title {
+  letter-spacing: 3px;
+  font-weight: var(--fw-400); /* Más grosor si se desea */
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.3;
+}
+
+.video-banner {
+  position: relative;
+  overflow: hidden;
+  margin: 0 1rem;
+  border-radius: 1rem;
+  max-width: 1280px;
+  margin-inline: auto;
+}
+
+.banner-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1rem;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50% -50%);
+  color: white;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  text-align: center;
+  padding: 1rem 2rem;
+  z-index: 1;
+}

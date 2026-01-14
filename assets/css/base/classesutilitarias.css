@@ -1,0 +1,404 @@
+/*-----------------------------------*\
+ * #REUSED STYLE
+\*-----------------------------------*/
+
+.container {
+  padding-inline: 15px;
+}
+
+.section {
+  padding-block: var(--section-padding);
+}
+
+.h1,
+.h2,
+.h3,
+.h4 {
+  color: var(--rich-black-fogra-29);
+}
+
+.h1 {
+  font-size: var(--fs-1);
+  font-weight: var(--fw-300);
+  line-height: 1.5;
+}
+
+.h2 {
+  font-size: var(--fs-2);
+}
+
+.h3 {
+  font-size: var(--fs-4);
+}
+
+.h4 {
+  font-size: var(--fs-5);
+  text-transform: uppercase;
+}
+
+.btn {
+  background: var(--background, var(--cyan-agua));
+  color: var(--color, var(--white));
+  font-size: var(--fs-5);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 14px 25px;
+  border: 1px solid var(--border-color, var(--cyan-agua));
+}
+
+.btn-primary:is(:hover, :focus) {
+  --background: var(--salmon);
+  --border-color: var(--salmon);
+}
+
+.btn-secondary {
+  --background: transparent;
+  --border-color: var(--black);
+  --color: var(--black);
+}
+
+.btn-secondary:is(:hover, :focus) {
+  --background: hsla(0, 0%, 0%, 0.1);
+}
+
+.has-scrollbar {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  scroll-snap-type: inline mandatory;
+}
+
+.has-scrollbar > li {
+  min-width: 100%;
+  scroll-snap-align: start;
+}
+
+.has-scrollbar::-webkit-scrollbar {
+  height: 10px;
+}
+
+.has-scrollbar::-webkit-scrollbar-track {
+  background: var(--white);
+  border-radius: 20px;
+  outline: 2px solid var(--cyan-agua);
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--cyan-agua);
+  border: 2px solid var(--white);
+  border-radius: 20px;
+}
+
+.has-scrollbar::-webkit-scrollbar-button {
+  width: calc(25% - 40px);
+}
+
+.card-banner {
+  background: transparent; /**fondo de tenis*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.image-contain {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transition: var(--transition-2);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
+}
+
+.product-card:is(:hover, :focus) .image-contain {
+  transform: scale(1.1);
+}
+
+/*ofertas- nuevo product -ultimos pares */
+.card-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-family: var(--ff-roboto);
+  font-size: var(--fs-7);
+  font-weight: bold;
+  border-radius: 25px;
+  z-index: 10;
+  animation: badgeFadeIn 0.6s ease both;
+}
+
+/* Oferta: cian vibrante */
+.card-badge.oferta {
+  background: var(--salmon);
+  animation: badgeFadeIn 0.6s ease both, pulseGlow 1.8s infinite ease-in-out;
+}
+
+/* Últimos Pares: rojo intenso */
+.card-badge.ultimos {
+  background: hsl(0, 100%, 50%);
+  animation: badgeFadeIn 0.6s ease both, shakeBadge 2s infinite ease-in-out;
+}
+
+/* Nuevo: verde brillante */
+.card-badge.nuevo {
+  background: hsl(145, 70%, 50%);
+  animation: badgeFadeIn 0.6s ease both, bounceBadge 2s infinite ease-in-out;
+}
+
+/*Sin Stock */
+.card-badge.sin-stock {
+  background: var(--onyx);
+  animation: badgeFadeIn 0.6s ease both, blinkBadge 1.5s infinite;
+}
+
+/* ANIMACIONES */
+@keyframes badgeFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 0px rgba(255, 0, 0, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 8px 4px rgba(255, 0, 0, 0.4);
+  }
+}
+
+@keyframes bounceBadge {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+@keyframes blinkBadge {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.card-badge {
+  animation: badgeFadeIn 0.6s ease both;
+}
+
+.card-badge.oferta,
+.card-badge.ultimos {
+  animation: badgeFadeIn 0.6s ease both, pulseGlow 1.8s infinite ease-in-out;
+}
+
+.card-action-list {
+  position: absolute;
+  top: 20px;
+  right: -20px;
+  opacity: 0;
+  transition: var(--transition-1);
+}
+
+.product-card:is(:hover, :focus) .card-action-list {
+  right: 20px;
+  opacity: 1;
+}
+
+.card-action-item {
+  position: relative;
+}
+
+.card-action-item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.card-action-btn {
+  background: var(--white);
+  color: var(--rich-black-fogra-29);
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 50%;
+  transition: var(--transition-1);
+}
+
+.card-action-btn ion-icon {
+  --ionicon-stroke-width: 30px;
+}
+
+.card-action-btn:is(:hover, :focus) {
+  background: var(--cyan-agua);
+  color: var(--white);
+}
+
+.card-action-tooltip {
+  position: absolute;
+  top: 50%;
+  right: calc(100% + 5px);
+  transform: translateY(-50%);
+  width: max-content;
+  background: var(--black_90);
+  color: var(--white);
+  font-family: var(--ff-roboto);
+  font-size: var(--fs-7);
+  padding: 4px 8px;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition-1);
+}
+
+.card-action-btn:is(:hover, :focus) + .card-action-tooltip {
+  opacity: 1;
+}
+/* parte de abajo de tarjeta */
+
+.product-card {
+  background: var(--maximum-blue-green_10); /* fondo negro puro */
+  color: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 255, 255, 0.08);
+  transition: var(--transition-2);
+  animation: fadeInCard 0.8s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 255, 255, 0.15);
+}
+
+.card-title a {
+  color: var(--white);
+  text-decoration: none;
+  text-align: left;
+  font-size: var(--fs-4);
+  font-weight: var(--fw-600);
+  margin-bottom: 8px;
+  margin-top: 12px;
+}
+
+.genero-zapato {
+  text-align: center;
+  color: var(--white);
+  font-weight: bold;
+  margin-top: 0.5rem;
+  transition: color 0.3s ease;
+}
+.product-card:hover .genero-zapato {
+  color: var(--cyan-agua);
+}
+.card-price {
+  font-size: var(--fs-3);
+  font-weight: var(--fw-800);
+  margin-right: 0;
+  color: var(--cyan-agua);
+  display: inline-block;
+  padding: 15px;
+}
+
+.card-content {
+  padding: 24px 15px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+/*para unisex */
+.card-cat {
+  font-family: var(--ff-roboto);
+  color: var(--onyx);
+  font-size: var(--fs-7);
+  margin-bottom: 12px;
+}
+
+.card-content .detalles-extra {
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.product-card:hover .card-content .detalles-extra {
+  opacity: 1;
+  visibility: visible;
+  max-height: 500px; /* suficiente para mostrar los elementos */
+}
+.card-cat-link {
+  display: inline-block;
+  color: inherit;
+  transition: var(--transition-1);
+}
+
+.card-cat-link:is(:hover, :focus) {
+  color: var(--cyan-agua);
+}
+
+.precio-boton {
+  display: flex;
+  align-items: center;
+  gap: 40px; /* Puedes ajustar el número para más o menos separación */
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.btn-compra {
+  background: var(--cyan-agua);
+  color: var(--white);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: var(--fs-7);
+  font-weight: var(--fw-700);
+  cursor: pointer;
+  transition: var(--transition-1);
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.btn-compra:hover {
+  background: hsl(185, 75%, 35%);
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 255, 255, 0.4);
+}
+
+.btn-compra ion-icon {
+  font-size: 18px;
+}
+
+/* Animación entrada suave */
+@keyframes fadeInCard {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

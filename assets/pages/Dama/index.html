@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dama | Onirik</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../favicon.svg" type="image/svg+xml" />
+
+    <!-- Custom CSS -->
+
+    <link rel="stylesheet" href="../../css/main.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Monoton&display=swap"
+      rel="stylesheet"/>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header" data-header>
+      <div class="container">
+        <div class="overlay" data-overlay></div>
+
+        <a href="/Index.html" class="logo">
+          <img
+            src="/images/onitik-verdeaguamarina.png"
+            width="100"
+            alt="Onirik logo"
+          />
+        </a>
+
+        <button class="nav-open-btn" data-nav-open-btn aria-label="Abrir menú">
+          <ion-icon name="menu-outline"></ion-icon>
+        </button>
+
+        <nav class="navbar" data-navbar>
+          <button
+            class="nav-close-btn"
+            data-nav-close-btn
+            aria-label="Cerrar menú"
+          >
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+
+          <a href="/Index.html" id="go-home" class="logo">
+            <img
+              src="/images/onitik-verdeaguamarina.png"
+              width="100"
+              alt="Onirik logo"
+            />
+          </a>
+
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <a href="/Index.html" class="navbar-link">Inicio</a>
+            </li>
+            <li class="navbar-item">
+              <a href="/assets/pages/caballero/index.html" class="navbar-link">Caballero</a>
+            </li>
+            
+            <li class="navbar-item">
+              <a href="/assets/pages/Kids/index.html" class="navbar-link">Kids</a>
+            </li>
+            
+          </ul>
+
+          <ul class="nav-action-list">
+
+            <!--buscar -->
+            <li>
+              <button class="nav-action-btn" aria-label="Buscar">
+                <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+                <span class="nav-action-text">Buscar</span>
+              </button>
+            </li>
+
+            <!--registro -->
+            <li>
+              <a href="#"  id="open-login" class="nav-action-btn"  
+              aria-label="Login o registro" title="Registro">
+                <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+                <span class="nav-action-text">Login / Registro</span>
+              </a>
+            </li>
+
+            <!--lista de deseos-->
+            <li>
+              <button  
+                id="open-wishlist" 
+                class="nav-action-btn"
+                aria-label="Wishlist"
+                title="Lista de deseos">
+                <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                <span class="nav-action-text">Wishlist</span>
+                <data class="nav-action-badge" id="wishlist-count"  value="0" 
+                aria-hidden="true">0</data>
+              </button>
+            </li>
+
+            <!--carrito-->
+        <li>
+          <button id="open-cart" class="nav-action-btn cart-btn" aria-label="Carrito de compras" title="Carrito">
+            <ion-icon name="cart-outline" aria-hidden="true"></ion-icon>
+            <span class="nav-action-text">Carrito</span>
+            <span class="nav-action-badge cart-counter">0</span>
+          </button>
+        </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!--·Producto-->
+
+    <section class="section product">
+      <div class="container">
+        <h2 class="h2 section-title">Catálogo <strong> Dama </strong></h2>
+    
+        <!--filtros-->
+        <ul class="filter-list">
+          <li><a href="#" class="filter-btn" data-filter="tenis-bajos">Tenis Bajos</a></li>
+          <li><a href="#" class="filter-btn" data-filter="tenis-altos">Tenis Alto</a></li>
+          <li><a href="#" class="filter-btn" data-filter="deporte">Zapatillas de Deporte</a></li>
+          <li><a href="#" class="filter-btn" data-filter="skate">Skate</a></li>
+          <li><a href="#" class="filter-btn" data-filter="all">Todos</a></li>
+        </ul>
+
+        <ul class="product-list">
+
+          <!-- Producto 1 - Catori -->
+      <li class="product-item" data-category="tenis-bajos">
+        <div class="product-card" tabindex="0" data-product-id="catori" data-product-price="1500">
+          <figure class="card-banner">
+            <img
+              src="../../../images/disenotenis/dama/catori.png"
+              width="312"
+              height="350"
+              loading="lazy"
+              alt="Zapatillas Supra Catori"
+              class="image-contain"
+              data-product-image="../../../images/disenotenis/dama/catori.png">
+
+            <ul class="card-action-list">
+              <!-- Añadir a carrito -->
+              <li class="card-action-item">
+                <button
+                  class="card-action-btn add-to-cart-btn" 
+                  aria-label="Añadir al carrito"
+                  data-product-id="catori"
+                  data-product-name="Supra Catori"
+                  data-product-price="1500"
+                  data-product-image="../../../images/disenotenis/dama/catori.png">
+                  <ion-icon name="cart-outline"></ion-icon>
+                </button>
+                <div class="card-action-tooltip">Añadir a Carrito</div>
+              </li>
+
+              <!-- Lista de deseos -->  
+              <li class="card-action-item">
+                <button class="card-action-btn wishlist-btn"
+                    aria-label="Añadir a lista de deseos"
+                    data-title="Supra Catori"
+                    data-price="1500"
+                    data-image="../../../images/disenotenis/dama/catori.png">
+                    <ion-icon name="heart-outline"></ion-icon>
+                </button>
+                <div class="card-action-tooltip">Añadir a la lista</div>
+              </li>
+        
+              <!-- Vista rápida --> 
+              <li class="card-action-item">
+                <button class="card-action-btn" aria-label="Vista rápida">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </button>
+                <div class="card-action-tooltip">Vista rápida</div>
+              </li>
+            </ul>
+          </figure>
+
+          <div class="card-content">
+            <p class="product-brand">
+              Marca: <strong>Supra Catori</strong>
+            </p>
+            <h3 class="card-title">
+              <a href="#">CATORI</a>
+            </h3>
+
+            <div class="product-options">
+              <div class="product-colors">
+                <span>Colores:</span>
+                <button
+                  class="color-dot"
+                  data-color="Black/White"
+                  data-image="../../../images/disenotenis/dama/catori.png"
+                  style="background-color: rgb(20, 20, 20)"
+                  aria-label="Color negro y blanco"
+                ></button>
+              </div>
+
+              <div class="product-sizes">
+                <span>Tallas:</span>
+                <button class="size-btn" aria-label="Talla 26">26</button>
+                <button class="size-btn" aria-label="Talla 28">28</button>
+                <button class="size-btn" aria-label="Talla 29">29</button>
+              </div>
+            </div>
+
+            <div class="precio-boton">
+              <span class="card-price" value="1500">$1500</span>
+              <button class="btn-compra"
+                data-product-id="catori"
+                data-product-name="Supra Catori"
+                data-product-price="1500"
+                data-product-image="../../../images/disenotenis/dama/catori.png">
+                Comprar
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+     
+      <!-- Producto 2 -->
+      <li class="product-item"  data-category="tenis-bajos">
+        <div class="product-card" tabindex="0">
+          <figure class="card-banner">
+            <img
+              src="/images/disenotenis/dama/Malli.png"
+              width="312"
+              height="350"
+              loading="lazy"
+              alt="Zapatillas Supra Mallicolor"
+              class="image-contain"
+            />
+
+            <ul class="card-action-list">
+
+            <!--añadir a carrito -->
+            <li class="card-action-item">
+                <button
+                  class="card-action-btn  add-to-cart-btn"
+                  aria-label="Add to Cart"
+                  data-product-id="Malli"
+                  data-product-name="Malli"
+                 data-product-price="1500"
+                 data-product-image="/images/disenotenis/dama/Malli.png">
+                  <ion-icon name="cart-outline"></ion-icon>
+                </button>
+                <div class="card-action-tooltip">Añadir a Carrito</div>
+              </li>
+
+              <!--añadir a lista de deseo -->
+              <li class="card-action-item">
+                <button
+                  class="card-action-btn wishlist-btn"
+                  aria-label="Add to Wishlist"
+                  data-title="Malli"
+                  data-price="1500"
+                  data-image="/images/disenotenis/dama/Malli.png">
+                  <ion-icon name="heart-outline"></ion-icon>
+                </button>
+                <div class="card-action-tooltip">Añadir a la lista</div>
+            </li>
+      
+            <!--vista rapida-->          
+              <li class="card-action-item">
+                <button class="card-action-btn" aria-label="Vista rápida">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </button>
+                <div class="card-action-tooltip">Vista rápida</div>
+              </li>
+            </ul>
+          </figure>
+
+          <div class="card-content">
+            <p class="product-brand">
+              Marca: <strong>Supra Malli</strong>
+            </p>
+            <h3 class="card-title">
+              <a href="#">Malli</a>
+            </h3>
+
+            <div class="product-options">
+              <div class="product-colors">
+                <span>Colores:</span>
+                <button
+                  class="color-dot"
+                  data-color="Black/White"
+                  data-imagen="/images/disenotenis/dama/Malli.png"
+                  style="background-color: rgb(20, 20, 20)"
+                  aria-label="Color negros-blanco"
+                ></button>
+              </div>
+
+              <div class="product-sizes">
+                <span>Tallas:</span>
+                <button class="size-btn" aria-label="Talla 26">26</button>
+                <button class="size-btn" aria-label="Talla 28">28</button>
+                <button class="size-btn" aria-label="Talla 29">29</button>
+              </div>
+            </div>
+
+            <div class="precio-boton">
+              <span class="card-price">$1500</span>
+              <button class="btn-compra">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </li>
+      
+      <!-- Producto 3 -->
+      <li class="product-item">
+        <div class="product-card" tabindex="0">
+          <figure class="card-banner">
+            <img
+              src="/images/disenotenis/dama/Malli.png"
+              width="312"
+              height="350"
+              loading="lazy"
+              alt="Zapatillas Supra Mallicolor"
+              class="image-contain"
+            />
+
+            <ul class="card-action-list">
+
+            <!--añadir a carrito -->
+            <li class="card-action-item">
+                <button
+                  class="card-action-btn  add-to-cart-btn"
+                  aria-label="Add to Cart"
+                  data-product-id="Malli"
+                  data-product-name="Malli"
+                 data-product-price="1500"
+                 data-product-image="/images/disenotenis/dama/Malli.png">
+                  <ion-icon name="cart-outline"></ion-icon>
+                </button>
+                <div class="card-action-tooltip">Añadir a Carrito</div>
+              </li>
+
+              <!--añadir a lista de deseo -->
+              <li class="card-action-item">
+                <button
+                  class="card-action-btn wishlist-btn"
+                  aria-label="Add to Wishlist"
+                  data-title="Malli"
+                  data-price="1500"
+                  data-image="/images/disenotenis/dama/Malli.png">
+                  <ion-icon name="heart-outline"></ion-icon>
+                </button>
+                <div class="card-action-tooltip">Añadir a la lista</div>
+              </button>
+              
+            </li>
+      
+            <!--vista rapida-->          
+              <li class="card-action-item">
+                <button class="card-action-btn" aria-label="Vista rápida">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </button>
+                <div class="card-action-tooltip">Vista rápida</div>
+              </li>
+            </ul>
+          </figure>
+
+          <div class="card-content">
+            <p class="product-brand">
+              Marca: <strong>Supra Malli</strong>
+            </p>
+            <h3 class="card-title">
+              <a href="#">Malli</a>
+            </h3>
+
+            <div class="product-options">
+              <div class="product-colors">
+                <span>Colores:</span>
+                <button
+                  class="color-dot"
+                  data-color="Black/White"
+                  data-imagen="/images/disenotenis/dama/Malli.png"
+                  style="background-color: rgb(20, 20, 20)"
+                  aria-label="Color negros-blanco"
+                ></button>
+              </div>
+
+              <div class="product-sizes">
+                <span>Tallas:</span>
+                <button class="size-btn" aria-label="Talla 26">26</button>
+                <button class="size-btn" aria-label="Talla 28">28</button>
+                <button class="size-btn" aria-label="Talla 29">29</button>
+              </div>
+            </div>
+
+            <div class="precio-boton">
+              <span class="card-price">$1500</span>
+              <button class="btn-compra">Comprar</button>
+            </div>
+          </div>
+        </div>
+      
+      </li>
+      
+      <!-- Producto 4-->
+      <li class="product-item">
+        <div class="product-card" tabindex="0">
+          <figure class="card-banner">
+            <img
+              src="/images/disenotenis/dama/Malli.png"
+              width="312"
+              height="350"
+              loading="lazy"
+              alt="Zapatillas Supra Mallicolor"
+              class="image-contain"
+            />
+
+            <ul class="card-action-list">
+
+            <!--añadir a carrito -->
+            <li class="card-action-item">
+                <button
+                  class="card-action-btn  add-to-cart-btn"
+                  aria-label="Add to Cart"
+                  data-product-id="Malli"
+                  data-product-name="Malli"
+                 data-product-price="1500"
+                 data-product-image="/images/disenotenis/dama/Malli.png">
+                  <ion-icon name="cart-outline"></ion-icon>
+                </button>
+                <div class="card-action-tooltip">Añadir a Carrito</div>
+              </li>
+
+              <!--añadir a lista de deseo -->
+              <li class="card-action-item">
+                <button
+                  class="card-action-btn wishlist-btn"
+                  aria-label="Add to Wishlist"
+                  data-title="Malli"
+                  data-price="1500"
+                  data-image="/images/disenotenis/dama/Malli.png">
+                  <ion-icon name="heart-outline"></ion-icon>
+                </button>
+                <div class="card-action-tooltip">Añadir a la lista</div>
+              </button>
+            
+            </li>
+      
+            <!--vista rapida-->          
+              <li class="card-action-item">
+                <button class="card-action-btn" aria-label="Vista rápida">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </button>
+                <div class="card-action-tooltip">Vista rápida</div>
+              </li>
+            </ul>
+          </figure>
+
+          <div class="card-content">
+            <p class="product-brand">
+              Marca: <strong>Supra Malli</strong>
+            </p>
+            <h3 class="card-title">
+              <a href="#">Malli</a>
+            </h3>
+
+            <div class="product-options">
+              <div class="product-colors">
+                <span>Colores:</span>
+                <button
+                  class="color-dot"
+                  data-color="Black/White"
+                  data-imagen="/images/disenotenis/dama/Malli.png"
+                  style="background-color: rgb(20, 20, 20)"
+                  aria-label="Color negros-blanco"
+                ></button>
+              </div>
+
+              <div class="product-sizes">
+                <span>Tallas:</span>
+                <button class="size-btn" aria-label="Talla 26">26</button>
+                <button class="size-btn" aria-label="Talla 28">28</button>
+                <button class="size-btn" aria-label="Talla 29">29</button>
+              </div>
+            </div>
+
+            <div class="precio-boton">
+              <span class="card-price">$1500</span>
+              <button class="btn-compra">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </li>
+     
+
+      
+
+
+
+    </ul>
+
+    <!-- - #SERVICE
+      -->
+      <section class="section service">
+        <div class="container">
+
+          <ul class="service-list">
+
+            <li class="service-item">
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <img src="/images/iconos-envio/transport.png" width="40" height="40" loading="lazy" alt="Service icon">
+                </div>
+
+                <div>
+                  <h3 class="h4 card-title">ENVIO GRATIS</h3>
+                  <p class="card-text">
+                    Todos los pedidos superiores <span>$250</span>
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <img src="/images/iconos-envio/credit-card.png" width="40" height="40" loading="lazy" alt="Service icon">
+                </div>
+
+                <div>
+                  <h3 class="h4 card-title">PAGO RAPIDO</h3>
+
+                  <p class="card-text">
+                    Pago 100% seguro
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <img src="/images/iconos-envio/refund.png" width="40" height="40" loading="lazy" alt="Service icon">
+                </div>
+
+                <div>
+                  <h3 class="h4 card-title">DEVOLUCIONES GRATIS</h3>
+
+                  <p class="card-text">
+                    Devolucion de dinero en 30 dias 
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <img src="/images/iconos-envio/customer-service.png" width="40" height="40" loading="lazy" alt="Service icon">
+                </div>
+
+                <div>
+                  <h3 class="h4 card-title">SOPORTE 24/7 </h3>
+
+                  <p class="card-text">
+                    Obtener soporte rapido
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+     <!-- 
+    - #FOOTER -->
+    <section>
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-grid">
+            <!-- Columna 1 -->
+            <div class="footer-column">
+              <h3 class="footer-title">ONIRIK</h3>
+              <p class="footer-text">
+                Donde el estilo se encuentra con la cancha
+              </p>
+              <ul class="social-list">
+                <li>
+                  <a
+                    href="https://facebook.com"
+                    class="social-link"
+                    aria-label="Facebook"
+                  >
+                    <ion-icon name="logo-facebook"></ion-icon>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://instagram.com"
+                    class="social-link"
+                    aria-label="Instagram"
+                  >
+                    <ion-icon name="logo-instagram"></ion-icon>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://tiktok.com"
+                    class="social-link"
+                    aria-label="TikTok"
+                  >
+                    <ion-icon name="logo-tiktok"></ion-icon>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Columna 2 -->
+            <div class="footer-column">
+              <h4 class="footer-subtitle">Productos</h4>
+              <ul class="footer-list">
+                <li>Dama</li>
+                <li>Caballero</li>
+                <li>Unisex</li>
+                <li>Edición Limitada</li>
+              </ul>
+            </div>
+
+            <!-- Columna 3 -->
+            <div class="footer-column">
+              <h4 class="footer-subtitle">Soporte</h4>
+              <ul class="footer-list">
+                <li>Envíos</li>
+                <li>Devoluciones</li>
+                <li>Tallas</li>
+                <li>Contacto</li>
+              </ul>
+            </div>
+
+            <!-- Columna 4 -->
+            <div class="footer-column">
+                <h4 class="footer-subtitle">Contacto</h4>
+                <ul class="footer-list">
+                  <li>
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <a href="mailto:exclusive@onirik.com">exclusive@onirik.com</a>
+                  </li>
+                  <li>
+                    <ion-icon name="call-outline"></ion-icon> WhatsApp: +1 234 567 890
+                  </li>
+                  <li>
+                    <ion-icon name="location-outline"></ion-icon>
+                    Envío Express 24h
+                  </li>
+                </ul>
+              </div>
+        </div>
+      </footer>
+    </section>
+
+     <!-- pie de pagina inferior-->
+     <div class="footer-bottom">
+      <p>
+        © 2025 Onirik. Todos los derechos reservados. 
+        <a href="#" class="footer-link">Términos</a> |
+        <a href="#" class="footer-link">Privacidad</a> 
+      </p>
+    </div>
+  </div>
+</footer>
+</section>
+
+<!-- ir al inicio logo -->
+    <a href="#top" class="go-top-btn" data-go-top>
+      <ion-icon name="arrow-up-outline"></ion-icon>
+    </a>
+
+    <!-- Ionicons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+ 
+
+    <!-- JS -->
+    
+    <script src="/assets/js/app.js" type="module" defer></script>
+
+    
+  <!-- Modal Iniciar Sesión -->
+  <div class="modal" id="login-modal">
+    <div class="modal-content">
+      <button class="close-modal" aria-label="Cerrar">&times;</button>
+      <h2 class="modal-title">Iniciar Sesión</h2>
+      <p class="modal-subtitle">¡Bienvenido! Por favor, introduce tus datos</p>
+  
+      <form class="login-form">
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="login-email" placeholder="Introduce tu email" required />
+  
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" placeholder="••••••••" required />
+
+        <div class="help-links">
+          <a href="#">¿Necesitas ayuda?</a> 
+          <a href="#">Se me olvidó mi contraseña</a>
+        </div>
+  
+        <button type="submit" class="btn-login">Ingresar</button>
+  
+        <div class="modal-footer">
+          <span>¿No tienes una cuenta?</span>
+            <a href="#" class="registro-link switch-modal">Regístrate</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+<!-- Modal Registro -->
+
+<div class="modal" id="register-modal">
+<div class="modal-content">
+  <button class="close-modal" aria-label="Cerrar">&times;</button>
+  <h2 class="modal-title">Crear Cuenta</h2>
+  <p class="modal-subtitle">Regístrate para acceder a lanzamientos exclusivos</p>
+
+  <form class="auth-form">
+    <label for="register-name">Nombre completo</label>
+    <input type="text" id="register-name" placeholder="Tu nombre" required />
+
+    <label for="register-email">Correo electrónico</label>
+    <input type="email" id="register-email" placeholder="Introduce tu email" required />
+
+    <label for="register-password">Contraseña</label>
+    <input type="password" id="register-password" placeholder="Crea una contraseña" required />
+
+    <label for="register-confirm-password">Confirmar contraseña</label>
+    <input type="password" id="register-confirm-password" placeholder="Repite tu contraseña" required />
+
+    <button type="submit" class="btn-login">Registrarme</button>
+
+    <div class="modal-footer">
+      <p>¿Ya tienes una cuenta?</p>
+      
+    </div><a href="#" class="switch-modal">Iniciar Sesión</a>
+  </form>
+</div>
+</div>
+
+
+<!-- Modal wishlist lista corazon -->
+<div id="wishlist-modal" class="modal">
+<div class="modal-content wishlist-content">
+  <button class="close-wishlist" aria-label="Cerrar lista">&times;</button>
+  <h2>Mi lista de compras</h2>
+  <ul id="wishlist-items" class="wishlist-items"></ul>
+  <div id="wishlist-total" class="wishlist-total"></div>
+  <div class="wishlist-actions">
+    <button id="clear-wishlist" class="bnt btn-secondary"> Vaciar lista</button>
+    <button id="checkout-wishlist" class="btn btn-primary">Comprar</button>
+  </div>
+</div>
+</div>
+
+  <!-- Modal Carrito -->
+<div id="cart-modal" class="cart-modal hidden">
+  <div class="cart-content">
+    <div class="cart-header">
+      <h2>Tu Carrito</h2>
+      <button id="close-cart" class="close-btn" aria-label="Cerrar carrito">&times;</button>
+    </div>
+    <ul id="cart-items" class="cart-items-list">
+      <!-- Aquí se insertan los productos dinámicamente -->
+    </ul>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span class="cart-total-label">Total:</span>
+        <span class="cart-total-price" id="cart-total">0.00</span>
+      </div>
+      <button id="checkout-btn" class="checkout-btn">Ir a pagar</button>
+    </div>
+  </div>
+</div>
+
+  </body>
+
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pago exitoso</title>
+    <style>
+      :root {
+        --primary-light: #28a745;
+        --secondary-light: #d4edda;
+        --text-light: #155724;
+        --bg-light: white;
+        --primary-dark: #20c997;
+        --secondary-dark: #2d3436;
+        --text-dark: #f5f6fa;
+        --bg-dark: #1e272e;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: var(--secondary-light);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        color: var(--text-light);
+        text-align: center;
+        transition: background 0.5s ease, color 0.5s ease;
+      }
+
+      body.dark-mode {
+        background: var(--secondary-dark);
+        color: var(--text-dark);
+      }
+
+      .container {
+        background: var(--bg-light);
+        padding: 2.5rem 3rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        max-width: 450px;
+        transform: translateY(20px);
+        opacity: 0;
+        animation: fadeInUp 0.8s forwards 0.3s;
+        transition: background 0.5s ease, box-shadow 0.5s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      body.dark-mode .container {
+        background: var(--bg-dark);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      h1 {
+        margin-bottom: 1.2rem;
+        font-size: 2.2rem;
+        position: relative;
+        display: inline-block;
+      }
+
+      h1::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background: var(--primary-light);
+        border-radius: 3px;
+        transition: background 0.5s ease;
+      }
+
+      body.dark-mode h1::after {
+        background: var(--primary-dark);
+      }
+
+      p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+
+      .icon {
+        font-size: 4rem;
+        margin-bottom: 1.5rem;
+        animation: bounce 0.8s ease;
+        color: var(--primary-light);
+        transition: color 0.5s ease;
+      }
+
+      body.dark-mode .icon {
+        color: var(--primary-dark);
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-20px);
+        }
+        60% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .checkmark {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: block;
+        stroke-width: 5;
+        stroke: var(--primary-light);
+        stroke-miterlimit: 10;
+        margin: 0 auto 1.5rem;
+        animation: fill 0.6s ease-in-out 0.6s forwards,
+          scale 0.4s ease-in-out 0.8s both;
+        transition: stroke 0.5s ease;
+      }
+
+      body.dark-mode .checkmark {
+        stroke: var(--primary-dark);
+      }
+
+      .checkmark__circle {
+        stroke-dasharray: 166;
+        stroke-dashoffset: 166;
+        stroke-width: 5;
+        stroke-miterlimit: 10;
+        stroke: var(--primary-light);
+        fill: none;
+        animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+        transition: stroke 0.5s ease;
+      }
+
+      body.dark-mode .checkmark__circle {
+        stroke: var(--primary-dark);
+      }
+
+      .checkmark__check {
+        transform-origin: 50% 50%;
+        stroke-dasharray: 48;
+        stroke-dashoffset: 48;
+        animation: stroke 0.4s cubic-bezier(0.65, 0, 0.45, 1) 0.6s forwards;
+      }
+
+      @keyframes stroke {
+        100% {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @keyframes scale {
+        0%,
+        100% {
+          transform: none;
+        }
+        50% {
+          transform: scale3d(1.1, 1.1, 1);
+        }
+      }
+
+      @keyframes fill {
+        100% {
+          box-shadow: inset 0 0 0 100vh var(--primary-light);
+        }
+      }
+
+      body.dark-mode .checkmark {
+        animation: fill-dark 0.6s ease-in-out 0.6s forwards,
+          scale 0.4s ease-in-out 0.8s both;
+      }
+
+      @keyframes fill-dark {
+        100% {
+          box-shadow: inset 0 0 0 100vh var(--primary-dark);
+        }
+      }
+
+      a {
+        display: inline-block;
+        margin-top: 1.5rem;
+        color: var(--primary-light);
+        text-decoration: none;
+        font-weight: bold;
+        border: 2px solid var(--primary-light);
+        padding: 0.7rem 1.5rem;
+        border-radius: 30px;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      a::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--primary-light);
+        transition: all 0.4s ease;
+        z-index: -1;
+      }
+
+      a:hover {
+        color: white;
+      }
+
+      a:hover::before {
+        left: 0;
+      }
+
+      body.dark-mode a {
+        color: var(--primary-dark);
+        border-color: var(--primary-dark);
+      }
+
+      body.dark-mode a::before {
+        background: var(--primary-dark);
+      }
+
+      body.dark-mode a:hover {
+        color: var(--text-dark);
+      }
+
+      .theme-toggle {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--text-light);
+        transition: transform 0.3s ease, color 0.5s ease;
+      }
+
+      body.dark-mode .theme-toggle {
+        color: var(--text-dark);
+      }
+
+      .theme-toggle:hover {
+        transform: rotate(30deg);
+      }
+
+      .confetti {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: var(--primary-light);
+        opacity: 0;
+      }
+
+      body.dark-mode .confetti {
+        background-color: var(--primary-dark);
+      }
+    </style>
+  </head>
+  <body>
+    <button class="theme-toggle" id="themeToggle">🌓</button>
+    <div class="container">
+      <svg
+        class="checkmark"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 52 52"
+      >
+        <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+        <path
+          class="checkmark__check"
+          fill="none"
+          d="M14.1 27.2l7.1 7.2 16.7-16.8"
+        />
+      </svg>
+      <h1>¡Pago exitoso!</h1>
+      <p>
+        Tu pago se ha procesado correctamente. Recibirás un correo de
+        confirmación con los detalles de tu compra.
+      </p>
+      <a href="/">Volver a la tienda</a>
+    </div>
+
+    <script>
+      // Tema oscuro/claro
+      const themeToggle = document.getElementById('themeToggle')
+      const body = document.body
+
+      // Verificar preferencia del usuario
+      if (
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      ) {
+        body.classList.add('dark-mode')
+      }
+
+      themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode')
+
+        // Animación de confeti al cambiar tema
+        createConfetti()
+      })
+
+      // Función para crear efecto de confeti
+      function createConfetti() {
+        const container = document.querySelector('.container')
+        const colors = ['#20c997', '#a5dee5', '#fcc419', '#ff8787', '#b197fc']
+
+        for (let i = 0; i < 50; i++) {
+          const confetti = document.createElement('div')
+          confetti.classList.add('confetti')
+
+          // Posición aleatoria
+          const posX = Math.random() * 100
+          const posY = Math.random() * 100 - 10
+
+          // Tamaño aleatorio
+          const size = Math.random() * 8 + 4
+
+          // Color aleatorio
+          const color = colors[Math.floor(Math.random() * colors.length)]
+
+          // Rotación aleatoria
+          const rotation = Math.random() * 360
+
+          // Establecer propiedades
+          confetti.style.left = `${posX}%`
+          confetti.style.top = `${posY}%`
+          confetti.style.width = `${size}px`
+          confetti.style.height = `${size}px`
+          confetti.style.backgroundColor = color
+          confetti.style.transform = `rotate(${rotation}deg)`
+
+          // Animación
+          confetti.style.animation = `fall ${
+            Math.random() * 3 + 2
+          }s ease-in forwards`
+
+          // Añadir al contenedor
+          container.appendChild(confetti)
+
+          // Eliminar después de la animación
+          setTimeout(() => {
+            confetti.remove()
+          }, 3000)
+        }
+      }
+
+      // Añadir keyframes dinámicamente para el confeti
+      const style = document.createElement('style')
+      style.innerHTML = `
+        @keyframes fall {
+          0% {
+            opacity: 1;
+            transform: translateY(-10px) rotate(0deg);
+          }
+          100% {
+            opacity: 0;
+            transform: translateY(100px) rotate(360deg);
+          }
+        }
+      `
+      document.head.appendChild(style)
+
+      // Efecto de confeti al cargar la página
+      window.addEventListener('load', () => {
+        setTimeout(createConfetti, 1000)
+      })
+    </script>
+  </body>
+</html>

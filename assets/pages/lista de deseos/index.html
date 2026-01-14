@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Lista de Deseos - Onirik</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <!-- Header (igual que index.html) -->
+    <header class="header" data-header>
+      <!-- ... -->
+    </header>
+
+    <main class="wishlist-page">
+      <div class="container">
+        <h1>Mi Lista de Deseos</h1>
+
+        <div class="wishlist-items" id="wishlist-container">
+          <!-- Los productos se cargarán aquí dinámicamente -->
+          <p class="empty-message">Tu lista de deseos está vacía</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer (igual que index.html) -->
+    <footer class="footer">
+      <!-- ... -->
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const wishlist = JSON.parse(localStorage.getItem('wishlist')) || []
+        const container = document.getElementById('wishlist-container')
+
+        if (wishlist.length === 0) {
+          container.innerHTML =
+            '<p class="empty-message">Tu lista de deseos está vacía</p>'
+          return
+        }
+
+        // Aquí deberías hacer una petición a tu API o cargar los productos
+        // Este es un ejemplo con datos estáticos
+        const products = {
+          'pecos-black': {
+            name: 'PECOS Black/Hedge-hedge',
+            price: '$2,500',
+            image: '../images/diseñotenis/caballero/PECOS-black.png',
+            category: 'Caballero',
+            url: '../caballero/pecos-black.html',
+          },
+          // Agrega más productos según sea necesario
+        }
+
+        let html = ''
+        wishlist.forEach((productId) => {
+          const product = products[productId]
+          if (product) {
+            html += `
+            <div class="wishlist-item">
+              <a href="${product.url}" class="product-image">
+                <img src="${product.image}" alt="${product.name}">
+              </a>
+              <div class="product-info">
+                <h3><a href="${product.url}">${product.name}</a></h3>
+                <span class="category">${product.category}</span>
+                <div class="price">${product.price}</div>
+              </div>
+              <button class="remove-btn" data-product-id="${productId}">
+                <ion-icon name="trash-outline"></ion-icon>
+              </button>
+            </div>
+          `
+          }
+        })
+
+        container.innerHTML = html
+
+        // Manejar botones de eliminar
+        document.querySelectorAll('.remove-btn').forEach((button) => {
+          button.addEventListener('click', function () {
+            const productId = this.getAttribute('data-product-id')
+            wishlist = wishlist.filter((id) => id !== productId)
+            localStorage.setItem('wishlist', JSON.stringify(wishlist))
+            this.closest('.wishlist-item').remove()
+
+            if (wishlist.length === 0) {
+              container.innerHTML =
+                '<p class="empty-message">Tu lista de deseos está vacía</p>'
+            }
+
+            // Actualizar contador en navbar
+            const counter = document.querySelector(
+              '.nav-action-badge[aria-hidden="true"]'
+            )
+            if (counter) {
+              counter.textContent = wishlist.length
+            }
+          })
+        })
+      })
+    </script>
+  </body>
+</html>

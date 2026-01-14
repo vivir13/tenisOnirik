@@ -1,0 +1,83 @@
+/*-----------------------------------*\
+ * #RESET
+\*-----------------------------------*/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+img,
+span,
+table,
+tbody,
+button,
+ion-icon {
+  display: block;
+}
+
+button,
+input {
+  font: inherit;
+  background: none;
+  border: none;
+}
+
+input {
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+address {
+  font-style: normal;
+  line-height: 1.8;
+}
+
+html {
+  font-family: var(--ff-josefin-sans);
+  font-size: 62.5%; /* 1rem = 10px */
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--rich-black-fogra-29); /* fondo oscuro elegante */
+  color: var(--gray-x-11-gray); /* texto gris claro legible */
+  font-size: 1.6rem;
+  padding-block-start: 90px;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(0, 0%, 95%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(0, 0%, 80%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(0, 0%, 70%);
+}
